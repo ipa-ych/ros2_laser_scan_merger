@@ -14,13 +14,13 @@ def generate_launch_description():
     config = os.path.join(
         get_package_share_directory('tricycle_sim'),
         'config',
-        'laser_merge.yaml'
+        'laser_merge_3.yaml'
     )
     return LaunchDescription([
         
         launch_ros.actions.Node(
             package='ros2_laser_scan_merger',
-            executable='ros2_laser_scan_merger',
+            executable='ros2_laser_scan_merger_3',
             parameters=[config],
             output='screen',
             respawn=True,

@@ -32,8 +32,19 @@ include_directories(
   include
   ${PCL_INCLUDE_DIRS}
 )
-add_executable(ros2_laser_scan_merger src/main.cpp)
-ament_target_dependencies(ros2_laser_scan_merger 
+add_executable(ros2_laser_scan_merger_3 src/3_scan_merge_node.cpp)
+ament_target_dependencies(ros2_laser_scan_merger_3
+  rclcpp 
+  std_msgs 
+  sensor_msgs
+  pcl_conversions
+  rcl_interfaces
+  rcutils
+  tf2_geometry_msgs
+  geometry_msgs
+)
+add_executable(ros2_laser_scan_merger_2 src/2_scan_merge_node.cpp)
+ament_target_dependencies(ros2_laser_scan_merger_2
   rclcpp 
   std_msgs 
   sensor_msgs
@@ -58,7 +69,8 @@ install(DIRECTORY
 
 
 install(TARGETS
-ros2_laser_scan_merger
+ros2_laser_scan_merger_2
+ros2_laser_scan_merger_3
 DESTINATION lib/${PROJECT_NAME})
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
