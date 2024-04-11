@@ -448,7 +448,7 @@ private:
     this->get_parameter_or<bool>("inverse3", inverse3_, false);
   }
   std::string topic1_, topic2_, topic3_, cloudTopic_, cloudFrameId_;
-   bool show1_, show2_, show3_, flip1_, flip2_, flip3_, inverse1_, inverse2_, inverse3_;
+  bool show1_, show2_, show3_, flip1_, flip2_, flip3_, inverse1_, inverse2_, inverse3_;
   float laser1XOff_, laser1YOff_, laser1ZOff_, laser1Alpha_, laser1AngleMin_, laser1AngleMax_;
   uint8_t laser1R_, laser1G_, laser1B_;
 
